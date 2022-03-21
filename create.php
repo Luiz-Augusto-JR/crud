@@ -8,9 +8,9 @@
     $email = $_POST["email"];
 
     //definindo na variavel SSQL o insert na database com os dados a serem cadastrados 
-    $sql = "INSERT INTO usuario (`nome`,`email`)value(\"$nome\",\"$email\")";
+    $sql = "INSERT INTO usuario (`nome`,`email`)value('$nome','$email')";
 
-    //CHAMANDO O PDO MANDANDO ELE EXCUTAR A QUERY "$SQL"
+    //PEDINDO PRO PDO EXCUTAR UMA CONSULTA NO "$SQL" DEFINIDO NA LINHA DE CIMA
     $pdo->query($sql);
 
 ?>

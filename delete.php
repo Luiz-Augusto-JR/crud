@@ -7,9 +7,9 @@
 
     // fazendo delete no banco de dados nesse id na variavel sql
     $sql = "DELETE FROM usuario WHERE id=\"$id\" ";
-    // pedindo pro pdo fazer essa query do SQL
+    // PEDINDO PRO PDO EXECUTAR UMA CONSULTA NO "$SQL" DEFINIDO NA LINHA DE CIMA
     $pdo->query($sql);
 
-    //ASSIM QUE LICAR EM EXCLUIR ELE VOLTA PRA READ.PHP
+    //ASSIM QUE CLICAR EM EXCLUIR ELE VOLTA PRA READ.PHP
     header("location: read.php");
 ?>
