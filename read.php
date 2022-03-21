@@ -11,7 +11,8 @@ $sql = "SELECT * FROM usuario ";
 // executando  a query "$sql"
 $exec = $pdo->query($sql);
 
-// usando o while e o fetch pra trazer esses dados até n ter mais nenhum
+// usando o while trazer esses dados até n ter mais nenhumo e o fetch quebra todas as colunas das tabelas 
+// em vetores pra gente usar dps
 while($registro = $exec->fetch()){
     echo "ID:" . $registro["id"] . "<br/>" . "Nome: ". $registro["nome"] . "<br/>" . "E-mail: " . $registro["email"] . "<br/>";
     // colocando um link que leva pra update.php o "ID" pra saber quem é que vai ser atualizado

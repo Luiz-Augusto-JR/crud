@@ -18,7 +18,8 @@
             $sql = "SELECT * FROM usuario where id=$id";
             //mandando o PDO executar a query no "$sql"
             $exec = $pdo->query($sql);
-            //armazenando os dados na variavel $registroAtualiza pra usar ali nos inputs
+            //armazenando os dados na variavel $registroAtualiza pra usar ali nos inputs, o fetch quebra todas as colunas das tabelas 
+            // em vetores pra gente usar dps
             $registroAtualiza = $exec->fetch();
         ?>
         <script>
