@@ -48,3 +48,29 @@ $("#btn_atualizar").on("click",function(){
         window.location="read.php";
     })
 })
+
+const buscarRegistros = () => {
+    $.ajax({
+        url: "read.php",
+        type: "get",        
+        data: null,
+        beforeSend : function(){
+            $("#registros").html("Buscando registros...");
+        }
+    }).done(function(responseJSON){
+        const response = JSON.parse(responseJSON)
+
+        
+        const html = response.map(record => `
+            ID: ${record.id} <br/>
+            Nome: ${record.nome} <br/>
+            E-mail: ${record.email} <br/>
+            
+            <a class='att' href=formUpdate.php?id=${record.id}>Atualizar</a>
+            <a class='delete' href=delete.php?id=${record.id}>Excluir</a>
+            <hr />
+        `)        
+
+        $("#registros").html(html);
+    }) 
+}
